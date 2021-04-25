@@ -1,14 +1,14 @@
 package dep
 
 import (
-	"apps/tree/comm"
+	"apps/tree/types"
 )
 
 // 最大深度
 
 // DFS 深度优先遍历
 
-func MaxDepth(root *comm.TreeNode) int {
+func MaxDepth(root *types.TreeNode) int {
 	if root == nil {
 		return 0
 	}

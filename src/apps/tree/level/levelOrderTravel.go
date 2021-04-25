@@ -1,11 +1,11 @@
 package level
 
-import "apps/tree/comm"
+import "apps/tree/types"
 
 // BFS 层序遍历
-func TravelByStack(root *comm.TreeNode) []int {
+func TravelByStack(root *types.TreeNode) []int {
 	var res []int
-	var stack []*comm.TreeNode
+	var stack []*types.TreeNode
 	stack = append(stack, root)
 	for len(stack) > 0 {
 
@@ -26,9 +26,9 @@ func TravelByStack(root *comm.TreeNode) []int {
 }
 
 // 最大深度
-func MaxDepth(root *comm.TreeNode) int {
+func MaxDepth(root *types.TreeNode) int {
 	var res int
-	var stack []*comm.TreeNode
+	var stack []*types.TreeNode
 	stack = append(stack, root)
 	for len(stack) > 0 {
 		lens := len(stack)

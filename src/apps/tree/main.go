@@ -1,7 +1,8 @@
 package main
 
 import (
-	"apps/tree/comm"
+	"apps/tree/lca"
+	"apps/tree/types"
 	"apps/tree/dep"
 	"apps/tree/in"
 	"apps/tree/level"
@@ -11,7 +12,7 @@ import (
 )
 
 
-var Tree *comm.TreeNode
+var Tree *types.TreeNode
 
 /*
 					   20
@@ -21,18 +22,18 @@ var Tree *comm.TreeNode
 */
 func InitTree() {
 	if Tree == nil {
-		Tree = &comm.TreeNode{}
+		Tree = &types.TreeNode{}
 	}
 	Tree.Val = 20
-	Tree.Left = &comm.TreeNode{Val: 15}
-	Tree.Right = &comm.TreeNode{Val: 30}
-	Tree.Left.Left = &comm.TreeNode{Val: 9}
-	Tree.Left.Right = &comm.TreeNode{Val: 17}
-	Tree.Right.Left = &comm.TreeNode{Val: 25}
-	Tree.Right.Right = &comm.TreeNode{Val: 32}
-	Tree.Left.Left.Left = &comm.TreeNode{Val: 8}
-	Tree.Left.Right.Right= &comm.TreeNode{Val: 19}
-	Tree.Right.Right.Left = &comm.TreeNode{Val: 31}
+	Tree.Left = &types.TreeNode{Val: 15}
+	Tree.Right = &types.TreeNode{Val: 30}
+	Tree.Left.Left = &types.TreeNode{Val: 9}
+	Tree.Left.Right = &types.TreeNode{Val: 17}
+	Tree.Right.Left = &types.TreeNode{Val: 25}
+	Tree.Right.Right = &types.TreeNode{Val: 32}
+	Tree.Left.Left.Left = &types.TreeNode{Val: 8}
+	Tree.Left.Right.Right= &types.TreeNode{Val: 19}
+	Tree.Right.Right.Left = &types.TreeNode{Val: 31}
 }
 
 func main() {
@@ -50,6 +51,9 @@ func main() {
 	// 二叉树最大深度
 	fmt.Println("递归：最大深度", dep.MaxDepth(Tree))
 	fmt.Println("迭代：最大深度", level.MaxDepth(Tree))
+
+	// 最近公共祖先
+	fmt.Println(lca.LCA(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val)
 
 }
 
