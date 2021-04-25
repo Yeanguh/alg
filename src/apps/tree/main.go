@@ -2,7 +2,9 @@ package main
 
 import (
 	"apps/tree/comm"
+	"apps/tree/dep"
 	"apps/tree/in"
+	"apps/tree/level"
 	"apps/tree/post"
 	"apps/tree/pre"
 	"fmt"
@@ -36,16 +38,18 @@ func InitTree() {
 func main() {
 	InitTree()
 
+	// 遍历
 	fmt.Println("递归：前",pre.TravelByRecurse(Tree))
 	fmt.Println("迭代：前",pre.TravelByStack(Tree))
-
 	fmt.Println("递归：中",in.TravelByRecurse(Tree))
 	fmt.Println("迭代：中",in.TravelByStack(Tree))
-
 	fmt.Println("递归：后",post.TravelByRecurse(Tree))
-	fmt.Println("递归：后",post.TravelByStack(Tree))
+	fmt.Println("迭代：后",post.TravelByStack(Tree))
+	fmt.Println("迭代：层次",level.TravelByStack(Tree))
 
-
+	// 二叉树最大深度
+	fmt.Println("递归：最大深度", dep.MaxDepth(Tree))
+	fmt.Println("迭代：最大深度", level.MaxDepth(Tree))
 
 }
 
