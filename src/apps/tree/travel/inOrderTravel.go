@@ -1,4 +1,4 @@
-package in
+package travel
 
 import (
 	"apps/tree/types"
@@ -7,7 +7,7 @@ import (
 // 中序遍历
 
 //递归
-func TravelByRecurse(root *types.TreeNode) []int {
+func InTravelByRecurse(root *types.TreeNode) []int {
 	var res []int
 	var inOrder func(*types.TreeNode)
 	inOrder = func(node *types.TreeNode) {
@@ -23,7 +23,7 @@ func TravelByRecurse(root *types.TreeNode) []int {
 }
 
 // 迭代
-func TravelByStack(root *types.TreeNode) []int {
+func InTravelByStack(root *types.TreeNode) []int {
 	var res []int
 	var stack []*types.TreeNode
 	for root != nil || len(stack) >0 {

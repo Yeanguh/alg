@@ -1,14 +1,12 @@
 package main
 
 import (
-	"apps/tree/lca"
-	"apps/tree/types"
-	"apps/tree/dep"
-	"apps/tree/in"
-	"apps/tree/level"
-	"apps/tree/post"
-	"apps/tree/pre"
+	"apps/tree/common_ancestor"
 	"fmt"
+
+	"apps/tree/depth"
+	"apps/tree/travel"
+	"apps/tree/types"
 )
 
 
@@ -40,20 +38,21 @@ func main() {
 	InitTree()
 
 	// 遍历
-	fmt.Println("递归：前",pre.TravelByRecurse(Tree))
-	fmt.Println("迭代：前",pre.TravelByStack(Tree))
-	fmt.Println("递归：中",in.TravelByRecurse(Tree))
-	fmt.Println("迭代：中",in.TravelByStack(Tree))
-	fmt.Println("递归：后",post.TravelByRecurse(Tree))
-	fmt.Println("迭代：后",post.TravelByStack(Tree))
-	fmt.Println("迭代：层次",level.TravelByStack(Tree))
+	fmt.Println("递归：前",travel.PreTravelByRecurse(Tree))
+	fmt.Println("迭代：前",travel.PreTravelByStack(Tree))
+	fmt.Println("递归：中", travel.InTravelByRecurse(Tree))
+	fmt.Println("迭代：中", travel.InTravelByStack(Tree))
+	fmt.Println("递归：后",travel.PostTravelByRecurse(Tree))
+	fmt.Println("迭代：后",travel.PostTravelByStack(Tree))
+	fmt.Println("迭代：层次", travel.LevelTravelByStack(Tree))
 
 	// 二叉树最大深度
-	fmt.Println("递归：最大深度", dep.MaxDepth(Tree))
-	fmt.Println("迭代：最大深度", level.MaxDepth(Tree))
+	fmt.Println("递归：最大深度", depth.MaxDepthByRecurse(Tree))
+	fmt.Println("迭代：最大深度", depth.MaxDepthByStack(Tree))
 
 	// 最近公共祖先
-	fmt.Println(lca.LCA(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val)
+	ca := common_ancestor.LCAByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val
+	fmt.Println("最近公共祖先：",ca)
 
 }
 
