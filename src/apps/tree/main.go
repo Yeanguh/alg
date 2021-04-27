@@ -51,13 +51,12 @@ func main() {
 	// 二叉树最大深度
 	fmt.Println("递归：最大深度", depth.MaxDepthByRecurse(Tree))
 	fmt.Println("迭代：最大深度", depth.MaxDepthByStack(Tree))
-
+	// 二叉树最小深度
 	fmt.Println("迭代：最小深度", depth.MinDepth(Tree))
 
-	// 最近公共祖先
-	ca := LCA.ByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val
-	fmt.Println("最近公共祖先：",ca)
 	fmt.Println("是否是对称二叉树：",symmetric.IsSymmetric(Tree))
 	fmt.Println("是否是平衡二叉树：",BTree.IsBalancedByRecurse(Tree))
+
+	fmt.Println("最近公共祖先：",LCA.ByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val)
 }
 
