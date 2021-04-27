@@ -1,7 +1,9 @@
 package main
 
 import (
-	"apps/tree/common_ancestor"
+	"apps/tree/BTree"
+	"apps/tree/LCA"
+	"apps/tree/symmetric"
 	"fmt"
 
 	"apps/tree/depth"
@@ -50,9 +52,12 @@ func main() {
 	fmt.Println("递归：最大深度", depth.MaxDepthByRecurse(Tree))
 	fmt.Println("迭代：最大深度", depth.MaxDepthByStack(Tree))
 
-	// 最近公共祖先
-	ca := common_ancestor.LCAByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val
-	fmt.Println("最近公共祖先：",ca)
+	fmt.Println("迭代：最小深度", depth.MinDepth(Tree))
 
+	// 最近公共祖先
+	ca := LCA.ByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val
+	fmt.Println("最近公共祖先：",ca)
+	fmt.Println("是否是对称二叉树：",symmetric.IsSymmetric(Tree))
+	fmt.Println("是否是平衡二叉树：",BTree.IsBalancedByRecurse(Tree))
 }
 

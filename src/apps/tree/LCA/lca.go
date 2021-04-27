@@ -1,9 +1,9 @@
-package common_ancestor
+package LCA
 
 import "apps/tree/types"
 
 // 最近公共祖先
-func LCAByRecurse(root *types.TreeNode, p *types.TreeNode, q *types.TreeNode) *types.TreeNode {
+func ByRecurse(root *types.TreeNode, p *types.TreeNode, q *types.TreeNode) *types.TreeNode {
 
 	if root == nil {
 		return nil
@@ -21,8 +21,8 @@ func LCAByRecurse(root *types.TreeNode, p *types.TreeNode, q *types.TreeNode) *t
 		return root
 	}
 	// 当函数可以执行到这里时，说明pq都不是root根节点，需要去左右中寻找pq
-	left := LCAByRecurse(root.Left, p, q) // 递归查找，pq是不是在root的左节点上
-	right := LCAByRecurse(root.Right, p, q)// 递归查找，pq是否在root的右节点上
+	left := ByRecurse(root.Left, p, q)   // 递归查找，pq是不是在root的左节点上
+	right := ByRecurse(root.Right, p, q) // 递归查找，pq是否在root的右节点上
 	if left != nil && right != nil {
 		// 如果两者都不为nil，说明pq在root根结点的左右，那root就是公共祖先
 		return root
