@@ -55,7 +55,7 @@ func main() {
 	fmt.Println("迭代：最小深度", depth.MinDepth(Tree))
 
 	fmt.Println("是否是对称二叉树：",symmetric.IsSymmetric(Tree))
-	fmt.Println("是否是平衡二叉树：",BTree.IsBalancedByRecurse(Tree))
+	fmt.Println("是否是平衡二叉树：",BTree.IsBalancedByRecurse(Tree)) // 不好理解
 
 	fmt.Println("最近公共祖先：",LCA.ByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val)
 }
