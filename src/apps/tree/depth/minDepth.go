@@ -2,7 +2,6 @@ package depth
 
 import (
 	"apps/tree/types"
-	"fmt"
 )
 
 func MinDepth(root *types.TreeNode) int {
@@ -17,7 +16,6 @@ func MinDepth(root *types.TreeNode) int {
 		lens := len(stack)
 		for i:=0;i<=lens-1;i++{
 			node := stack[0]
-			fmt.Println(node.Left,node.Right)
 			if node.Left != nil{
 				stack =append(stack,node.Left)
 			}

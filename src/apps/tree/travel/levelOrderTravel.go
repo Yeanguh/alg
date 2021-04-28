@@ -1,6 +1,8 @@
 package travel
 
-import "apps/tree/types"
+import (
+	"apps/tree/types"
+)
 
 // BFS 层序遍历
 func LevelTravelByStack(root *types.TreeNode) []int {
