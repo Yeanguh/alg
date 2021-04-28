@@ -1,16 +1,16 @@
 package travel
 
 import (
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
 // 前序遍历
 
 // 递归
-func PreTravelByRecurse(root *types.TreeNode) []int {
+func PreTravelByRecurse(root *models.TreeNode) []int {
 	var res []int
-	var preOrder func(*types.TreeNode)
-	preOrder = func(node *types.TreeNode) {
+	var preOrder func(*models.TreeNode)
+	preOrder = func(node *models.TreeNode) {
 		if node == nil {
 			return
 		}
@@ -23,9 +23,9 @@ func PreTravelByRecurse(root *types.TreeNode) []int {
 }
 
 // 迭代
-func PreTravelByStack(root *types.TreeNode) []int {
+func PreTravelByStack(root *models.TreeNode) []int {
 	var res []int
-	var stack []*types.TreeNode
+	var stack []*models.TreeNode
 	for root != nil || len(stack)>0 {
 		for root !=nil {
 			res = append(res, root.Val)

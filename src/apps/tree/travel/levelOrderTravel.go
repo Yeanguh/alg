@@ -1,13 +1,13 @@
 package travel
 
 import (
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
 // BFS 层序遍历
-func LevelTravelByStack(root *types.TreeNode) []int {
+func LevelTravelByStack(root *models.TreeNode) []int {
 	var res []int
-	var stack []*types.TreeNode
+	var stack []*models.TreeNode
 	stack = append(stack, root)
 	for len(stack) > 0 {
 

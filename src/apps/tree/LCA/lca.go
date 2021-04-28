@@ -1,9 +1,9 @@
 package LCA
 
-import "apps/tree/types"
+import "apps/tree/models"
 
 // 最近公共祖先
-func ByRecurse(root *types.TreeNode, p *types.TreeNode, q *types.TreeNode) *types.TreeNode {
+func ByRecurse(root *models.TreeNode, p *models.TreeNode, q *models.TreeNode) *models.TreeNode {
 
 	if root == nil {
 		return nil

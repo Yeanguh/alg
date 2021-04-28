@@ -8,11 +8,11 @@ import (
 
 	"apps/tree/depth"
 	"apps/tree/travel"
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
 
-var Tree *types.TreeNode
+var Tree *models.TreeNode
 
 /*
 					   20
@@ -22,18 +22,18 @@ var Tree *types.TreeNode
 */
 func InitTree() {
 	if Tree == nil {
-		Tree = &types.TreeNode{}
+		Tree = &models.TreeNode{}
 	}
 	Tree.Val = 20
-	Tree.Left = &types.TreeNode{Val: 15}
-	Tree.Right = &types.TreeNode{Val: 30}
-	Tree.Left.Left = &types.TreeNode{Val: 9}
-	Tree.Left.Right = &types.TreeNode{Val: 17}
-	Tree.Right.Left = &types.TreeNode{Val: 25}
-	Tree.Right.Right = &types.TreeNode{Val: 32}
-	Tree.Left.Left.Left = &types.TreeNode{Val: 8}
-	Tree.Left.Right.Right= &types.TreeNode{Val: 19}
-	Tree.Right.Right.Left = &types.TreeNode{Val: 31}
+	Tree.Left = &models.TreeNode{Val: 15}
+	Tree.Right = &models.TreeNode{Val: 30}
+	Tree.Left.Left = &models.TreeNode{Val: 9}
+	Tree.Left.Right = &models.TreeNode{Val: 17}
+	Tree.Right.Left = &models.TreeNode{Val: 25}
+	Tree.Right.Right = &models.TreeNode{Val: 32}
+	Tree.Left.Left.Left = &models.TreeNode{Val: 8}
+	Tree.Left.Right.Right= &models.TreeNode{Val: 19}
+	Tree.Right.Right.Left = &models.TreeNode{Val: 31}
 }
 
 func main() {
@@ -57,6 +57,6 @@ func main() {
 	fmt.Println("是否是对称二叉树：",symmetric.IsSymmetric(Tree))
 	fmt.Println("是否是平衡二叉树：",BTree.IsBalancedByRecurse(Tree)) // 不好理解
 
-	fmt.Println("最近公共祖先：",LCA.ByRecurse(Tree,&types.TreeNode{8,nil,nil},&types.TreeNode{9,nil,nil}).Val)
+	fmt.Println("最近公共祖先：",LCA.ByRecurse(Tree,&models.TreeNode{8,nil,nil},&models.TreeNode{9,nil,nil}).Val)
 }
 

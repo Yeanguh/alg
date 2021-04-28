@@ -1,13 +1,13 @@
 package depth
 
 import (
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
 // 最大深度
 
 // DFS深度优先
-func MaxDepthByRecurse(root *types.TreeNode) int {
+func MaxDepthByRecurse(root *models.TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -22,9 +22,9 @@ func max(a, b int) int {
 }
 
 // 广度优先
-func MaxDepthByStack(root *types.TreeNode) int {
+func MaxDepthByStack(root *models.TreeNode) int {
 	var res int
-	var stack []*types.TreeNode
+	var stack []*models.TreeNode
 	stack = append(stack, root)
 	for len(stack) > 0 {
 		lens := len(stack)

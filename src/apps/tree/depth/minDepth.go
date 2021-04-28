@@ -1,15 +1,15 @@
 package depth
 
 import (
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
-func MinDepth(root *types.TreeNode) int {
+func MinDepth(root *models.TreeNode) int {
 	var res int
 	if root == nil {
 		return res
 	}
-	var stack []*types.TreeNode
+	var stack []*models.TreeNode
 	stack = append(stack,root)
 	var isRes bool
 	for len(stack)>0{

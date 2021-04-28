@@ -1,15 +1,15 @@
 package symmetric
 
-import "apps/tree/types"
+import "apps/tree/models"
 
-func IsSymmetric(root *types.TreeNode) bool {
+func IsSymmetric(root *models.TreeNode) bool {
 	if root == nil {
 		return true
 	}
 	return nodeIsEq(root.Left, root.Right)
 }
 
-func nodeIsEq (leftNode, rightNode *types.TreeNode) bool {
+func nodeIsEq (leftNode, rightNode *models.TreeNode) bool {
 	if leftNode == nil && rightNode ==nil {
 		return true
 	}

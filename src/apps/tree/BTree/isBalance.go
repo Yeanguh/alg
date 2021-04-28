@@ -1,14 +1,14 @@
 package BTree
 
 import (
-	"apps/tree/types"
+	"apps/tree/models"
 )
 
-func IsBalancedByRecurse(root *types.TreeNode) bool {
+func IsBalancedByRecurse(root *models.TreeNode) bool {
 	return pro(root) != -1
 }
 
-func pro(root *types.TreeNode) int {
+func pro(root *models.TreeNode) int {
 	if root == nil {
 		return 0
 	}
