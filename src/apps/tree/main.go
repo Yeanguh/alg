@@ -7,8 +7,8 @@ import (
 	"fmt"
 
 	"apps/tree/depth"
-	"apps/tree/travel"
 	"apps/tree/models"
+	"apps/tree/travel"
 )
 
 
@@ -20,7 +20,7 @@ var Tree *models.TreeNode
 		9		17		    25		        32
 	8				19		            31
 */
-func InitTree() {
+func init() {
 	if Tree == nil {
 		Tree = &models.TreeNode{}
 	}
@@ -37,8 +37,6 @@ func InitTree() {
 }
 
 func main() {
-	InitTree()
-
 	// 遍历
 	fmt.Println("递归：前",travel.PreTravelByRecurse(Tree))
 	fmt.Println("迭代：前",travel.PreTravelByStack(Tree))
