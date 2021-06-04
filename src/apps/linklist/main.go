@@ -18,6 +18,7 @@ func printLinklist(head *models.ListNode){
 		fmt.Println(head.Val)
 		head = head.Next
 	}
+	fmt.Println("----分界线-----")
 }
 
 func main(){
