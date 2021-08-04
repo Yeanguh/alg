@@ -45,6 +45,7 @@ func main() {
 	fmt.Println("递归：后",travel.PostTravelByRecurse(Tree))
 	fmt.Println("迭代：后",travel.PostTravelByStack(Tree))
 	fmt.Println("迭代：层次", travel.LevelTravelByStack(Tree))
+	fmt.Println("迭代：锯齿层次", travel.ZigzagLevelOrder(Tree))
 
 	// 二叉树最大深度
 	fmt.Println("递归：最大深度", depth.MaxDepthByRecurse(Tree))

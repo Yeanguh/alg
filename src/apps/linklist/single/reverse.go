@@ -22,3 +22,26 @@ func Reverse(head *models.ListNode) *models.ListNode {
 func IsPalindrome(head *models.ListNode) bool {
 	return false
 }
+func ReverseKGroup1(head *models.ListNode, k int) *models.ListNode {
+	dummy := &models.ListNode{}
+	dummy.Next = head
+	pre := dummy
+	end := dummy
+	for end.Next != nil {
+		for i:=0;i<k&&end!=nil;i++ {
+			end = end.Next
+		}
+		if end == nil {
+			return dummy.Next
+		}
+		start := pre.Next
+		next := end.Next
+		end.Next = nil
+		pre.Next = Reverse(start)
+
+		start.Next = next
+		pre = start
+		end = pre
+	}
+	return dummy.Next
+}
